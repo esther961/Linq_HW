@@ -54,14 +54,19 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.button11 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button8 = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.productsTableAdapter1 = new LinqLabs.NWDataSetTableAdapters.ProductsTableAdapter();
+            this.nwDataSet1 = new LinqLabs.NWDataSet();
             this.groupBox5.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
@@ -85,6 +90,7 @@
             this.splitContainer1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // button5
@@ -118,7 +124,7 @@
             this.label2.Location = new System.Drawing.Point(93, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(118, 22);
+            this.label2.Size = new System.Drawing.Size(96, 18);
             this.label2.TabIndex = 52;
             this.label2.Text = "C# 1.0  / 2.0 ";
             // 
@@ -144,12 +150,13 @@
             this.button7.TabIndex = 58;
             this.button7.Text = " SwapAnyType -Generic Method";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // listBox2
             // 
             this.listBox2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 22;
+            this.listBox2.ItemHeight = 18;
             this.listBox2.Location = new System.Drawing.Point(0, 0);
             this.listBox2.Margin = new System.Windows.Forms.Padding(5);
             this.listBox2.Name = "listBox2";
@@ -200,6 +207,7 @@
             this.button45.TabIndex = 38;
             this.button45.Text = "Var (隱含型別區域變數)";
             this.button45.UseVisualStyleBackColor = false;
+            this.button45.Click += new System.EventHandler(this.button45_Click);
             // 
             // button43
             // 
@@ -213,6 +221,7 @@
             this.button43.TabIndex = 40;
             this.button43.Text = "匿名型別 Anonymouse type";
             this.button43.UseVisualStyleBackColor = false;
+            this.button43.Click += new System.EventHandler(this.button43_Click);
             // 
             // button41
             // 
@@ -226,6 +235,7 @@
             this.button41.TabIndex = 42;
             this.button41.Text = "物件初始化 (Object Initializer) / 集合初始化 ";
             this.button41.UseVisualStyleBackColor = false;
+            this.button41.Click += new System.EventHandler(this.button41_Click);
             // 
             // button40
             // 
@@ -239,6 +249,7 @@
             this.button40.TabIndex = 43;
             this.button40.Text = "隱含匿名型別陣列";
             this.button40.UseVisualStyleBackColor = false;
+            this.button40.Click += new System.EventHandler(this.button40_Click);
             // 
             // button3
             // 
@@ -251,6 +262,7 @@
             this.button3.TabIndex = 48;
             this.button3.Text = "從 Linq 實作 看 C# 3.0 ";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button39
             // 
@@ -299,6 +311,7 @@
             this.button32.TabIndex = 20;
             this.button32.Text = "擴充方法";
             this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
             // 
             // groupBox1
             // 
@@ -326,6 +339,7 @@
             this.button4.TabIndex = 53;
             this.button4.Text = "SwapInt / SwapString...";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // splitContainer2
             // 
@@ -371,7 +385,7 @@
             // 
             this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 22;
+            this.listBox1.ItemHeight = 18;
             this.listBox1.Location = new System.Drawing.Point(0, 0);
             this.listBox1.Margin = new System.Windows.Forms.Padding(5);
             this.listBox1.Name = "listBox1";
@@ -424,6 +438,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.button11);
             this.groupBox2.Controls.Add(this.button13);
             this.groupBox2.Location = new System.Drawing.Point(73, 450);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(5);
@@ -433,6 +448,16 @@
             this.groupBox2.TabIndex = 60;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Iterator";
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(992, 79);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(75, 23);
+            this.button11.TabIndex = 13;
+            this.button11.Text = "bool?";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // button13
             // 
@@ -446,6 +471,7 @@
             this.button13.TabIndex = 12;
             this.button13.Text = "C# 2.0公開能逐一查看集合內容的列舉值 - Yield Return";
             this.button13.UseVisualStyleBackColor = false;
+            this.button13.Click += new System.EventHandler(this.button13_Click);
             // 
             // splitContainer1
             // 
@@ -480,7 +506,7 @@
             this.label4.Location = new System.Drawing.Point(86, 653);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(373, 22);
+            this.label4.Size = new System.Drawing.Size(327, 18);
             this.label4.TabIndex = 37;
             this.label4.Text = "C# 3.0 宣告風格的編碼程式 / 高層次的抽象";
             // 
@@ -511,6 +537,8 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.button10);
+            this.groupBox4.Controls.Add(this.button9);
             this.groupBox4.Controls.Add(this.button2);
             this.groupBox4.Controls.Add(this.buttonX);
             this.groupBox4.Location = new System.Drawing.Point(77, 301);
@@ -521,6 +549,26 @@
             this.groupBox4.TabIndex = 62;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Delegate (委派)";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(795, 39);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(222, 51);
+            this.button10.TabIndex = 53;
+            this.button10.Text = "List<int> MyWhere(int[],MyDelegate)";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(628, 39);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(121, 51);
+            this.button9.TabIndex = 52;
+            this.button9.Text = "Test delegate";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button2
             // 
@@ -534,6 +582,7 @@
             this.button2.TabIndex = 1;
             this.button2.Text = "Delegate 委派演進";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
@@ -544,9 +593,18 @@
             this.label1.Size = new System.Drawing.Size(1014, 18);
             this.label1.TabIndex = 46;
             // 
+            // productsTableAdapter1
+            // 
+            this.productsTableAdapter1.ClearBeforeFill = true;
+            // 
+            // nwDataSet1
+            // 
+            this.nwDataSet1.DataSetName = "NWDataSet";
+            this.nwDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // FrmLangForLINQ
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1569, 856);
             this.Controls.Add(this.splitContainer1);
@@ -583,6 +641,7 @@
             this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nwDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -623,5 +682,10 @@
         private System.Windows.Forms.GroupBox groupBox4;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button11;
+        private LinqLabs.NWDataSetTableAdapters.ProductsTableAdapter productsTableAdapter1;
+        private LinqLabs.NWDataSet nwDataSet1;
     }
 }
